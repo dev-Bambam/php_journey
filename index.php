@@ -1,7 +1,27 @@
-<?php 
-if ($argc !== 2){
-    echo "Usage: php index.php <name>" . PHP_EOL;
-    exit(1);
-}
-$name = $argv[1];
-echo "Hello, $name" . PHP_EOL;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <?php
+        $name = "Dark Matter";
+        $read = false;
+
+        $message = $read ? "I'm reading $name" : "I'm not reading $name";
+    ?>
+
+    <h1><?= $message ?></h1>
+</body>
+</html>
