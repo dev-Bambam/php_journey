@@ -1,3 +1,7 @@
 <?php 
+require 'functions.php';
+$uri = $_SERVER['REQUEST_URI'];
 
-require "views/index.view.php";   
+if($uri === '/'){
+    require 'views/home.php';
+}
