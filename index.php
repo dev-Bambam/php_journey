@@ -1,7 +1,6 @@
 <?php 
-require 'functions.php';
 $uri = $_SERVER['REQUEST_URI'];
 
 if($uri === '/'){
-    require 'views/home.php';
+    require 'controllers/index.php';
 }
