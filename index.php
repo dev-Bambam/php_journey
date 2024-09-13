@@ -13,7 +13,7 @@ class Database
         $statement->execute();
         $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-}
+} 
 
 $db = new Database();
 $db->query();
