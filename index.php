@@ -1,23 +1,16 @@
 <?php
 require 'functions.php';
-// require 'router.php';
+require 'Database.php';
+require 'router.php';
 
-// connect to database, and execute a query 
-class Database
-{
-    public function query()
-    {
-        $dsn = 'mysql:host=localhost;port=3306;dbname=myapp;user=root;charset=utf8mb4';
-        $pdo = new PDO($dsn);
-        $statement = $pdo->prepare("select * from posts");
-        $statement->execute();
-        $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
-} 
+$config = require 'config.php';
+$db = new Database($config);
+$id = $__GET['id'];
+$query = 'SELECT * FROM posts WHERE id = :id';
 
-$db = new Database();
-$db->query();
+$posts = $db->query($query, ['id' => $id])->fetch();
 
+//print out posts
 foreach ($posts as $post) {
     echo "<li>" . $post['Title'] . "</li>";
 }
