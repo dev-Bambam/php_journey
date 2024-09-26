@@ -14,6 +14,9 @@
             <a href="/about"
               class="<?= applyBg('/about') ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
               US</a>
+            <a href="/about"
+              class="<?= applyBg('/notes') ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes
+              US</a>
             <a href="/contact"
               class="<?= applyBg('/contact') ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               aria-current="page">Contact</a>

@@ -2,20 +2,11 @@
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-// if($uri === '/'){
-//     require 'controllers/index.php';
-// }
-// elseif($uri === '/contact'){
-//     require 'controllers/contact.php';
-// }
-// elseif($uri === '/about'){
-//     require 'controllers/about.php';
-// } you can use this or the one below but I am going to use the one below
-
 $routes = [
     '/' => 'controllers/index.php',
     '/contact' => 'controllers/contact.php',
-    '/about' => 'controllers/about.php'
+    '/about' => 'controllers/about.php',
+    '/notes' => 'controllers/about.php',
 ];
 /**
  * Requires the appropriate controller for the given URI, or aborts if no matching route is found.
