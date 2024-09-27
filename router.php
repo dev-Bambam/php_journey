@@ -6,7 +6,7 @@ $routes = [
     '/' => 'controllers/index.php',
     '/contact' => 'controllers/contact.php',
     '/about' => 'controllers/about.php',
-    '/notes' => 'controllers/about.php',
+    '/notes' => 'controllers/notes.php',
 ];
 /**
  * Requires the appropriate controller for the given URI, or aborts if no matching route is found.
