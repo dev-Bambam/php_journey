@@ -6,11 +6,11 @@ require 'router.php';
 $config = require 'config.php';
 $db = new Database($config);
 $id = $__GET['id'];
-$query = 'SELECT * FROM posts WHERE id = :id';
+$query = 'SELECT * FROM notes WHERE id = :id';
 
-$posts = $db->query($query, ['id' => $id])->fetch();
+$notes = $db->query($query, ['id' => $id])->fetch();
 
 //print out posts
-foreach ($posts as $post) {
+foreach ($notes as $post) {
     echo "<li>" . $post['Title'] . "</li>";
 }
