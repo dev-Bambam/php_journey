@@ -13,3 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Hello, " . htmlspecialchars($name) . " your email is: " . htmlspecialchars($email);
     }
 }
+
+// starting session
+session_start();
+// storing session
+$_SESSION['name'] = $name;
+$_SESSION['email'] = $email;
+
