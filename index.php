@@ -4,6 +4,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
 
-    // simple output
-    echo "Hello, ". htmlspecialchars($name) . " your email is: " . htmlspecialchars($email);
+    // siimple validation
+    if (empty($name)) {
+        die('Name is required');
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die('Invalid email');
+    } else {
+        echo "Hello, " . htmlspecialchars($name) . " your email is: " . htmlspecialchars($email);
+    }
 }
