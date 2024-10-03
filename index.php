@@ -1,4 +1,7 @@
+
 <?php
+include "database.php";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // collect the form data 
     $name = $_POST['name'];
@@ -10,13 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die('Invalid email');
     } else {
-        echo "Hello, " . htmlspecialchars($name) . " your email is: " . htmlspecialchars($email);
+        // insert into database
+        $sql = "INSERT INTO users(name, email) VALUES (:name, :email)";
+        $statement = $pdo->prepare($sql);
+        $statement->execute([':name' => $name, ':email' => $email]);
+
+        echo "welcome name:$name email:$email";
     }
 }
-
-// starting session
-session_start();
-// storing session
-$_SESSION['name'] = $name;
-$_SESSION['email'] = $email;
-
